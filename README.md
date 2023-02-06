@@ -86,8 +86,15 @@ We considered following node properties to represents the topological structure 
 
 
 # Adjacency feature level similarity and disimilarity
+The graph files contain edge properties for each edge. The properties are,
 
-7. `getEdgeProperties(graph)`:
+- unsigned_weighted_rho
+- weighted_rho
+- rho
+
+## Methods
+
+1. `getEdgeProperties(graph)`:
 
     Description: It gives a dataframe containing the properties of each edge.
 
@@ -96,7 +103,7 @@ We considered following node properties to represents the topological structure 
     Output: A dataframe containing unsigned_weighted_rho, weighted_rho, rho for each edge of the graph.
 
 
-8. `getEdgePropertyDifferenceDf(graph1, graph2)`:
+2. `getEdgePropertyDifferenceDf(graph1, graph2)`:
 
     Description: It shows the absolute difference between two edge property dataframe of two graphs.
 
@@ -104,7 +111,7 @@ We considered following node properties to represents the topological structure 
 
     Output: A dataframe containing absolute difference of unsigned_weighted_rho, weighted_rho, rho for each edge between the graphs.
 
-9. `getEdgePropertyValue(graph)`:
+3. `getEdgePropertyValue(graph)`:
 
     Description: It shows a value representing a row vector in a graph edge property dataframe (where each edge of the graph are indexs and each row has unsigned_weighted_rho, weighted_rho, rho as column vectors). It sums up all these values. For any certain row, the maximum of the value can be 3. It is because, all these properties are normalized and each of them will be between 0 to 1. So there are total 3 properties and thus will have maximum value of 3 for each row.
 
@@ -112,13 +119,10 @@ We considered following node properties to represents the topological structure 
 
     Output: A dataframe containing a float value for each row of the graph.
 
-10. `similarAnddisimilarEdges(graph1, graph2)`:
+4. `similarAnddisimilarEdges(graph1, graph2)`:
 
     Description: It gives two list of similar and disimilar edges according to the edge property value of edge vectors between two graphs.
 
     Input: Two strings containing two graphs
 
     Output: Two list of edges
-
-
-
